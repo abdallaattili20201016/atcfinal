@@ -1,0 +1,173 @@
+/* General Reset  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+.dashboard-header {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Position it at the top of the page */
+  z-index: 100; /* Ensure it stays on top of other elements */
+  background-color: #576e85; /* Background color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  color: white;
+  height: 60px; /* Optional: Set a fixed height */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+}
+
+
+.header-buttons {
+  display: flex;
+  gap: 10px; /* Adds space between buttons */
+  align-items: center;
+}
+
+.view-profile-btn {
+  background-color: #2084ff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  width: auto; /* Ensure it's only as wide as needed */
+  height: auto; /* Ensure it adjusts properly */
+  margin: 0 10px; /* Add space between button and elements */
+}
+
+.view-profile-btn:hover {
+  background-color: #0056b3;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  border: none;
+  padding: 5px 10px; /* Smaller padding */
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  width: auto; /* Ensure it's only as wide as needed */
+  height: auto; /* Ensure it adjusts properly */
+  transition: background-color 0.3s;
+  margin: 0 10px; /* Add space between button and elements */
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+/* Welcome Section */
+.welcome-section {
+  margin-top: 50px;
+  margin: 30px;
+  text-align: left;
+  gap: 50px;
+}
+
+.welcome-section h2 {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #333;
+  text-align: left;
+  gap: 50px;
+}
+
+/* Info Section */
+.info-section {
+  padding: 50px;/*space between divs and cards*/
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  gap: 100px;
+}
+
+.info-box {
+  width: 45%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10px;
+}
+
+/* Dashboard Cards Section */
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px;
+  gap: 30px;
+  padding: 10px;
+}
+
+.dashboard-card {
+  width: 22%;
+  min-width: 200px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-link {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2084ff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dashboard-link:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Section */
+.dashboard-footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #004080;
+  color: white;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.dashboard-footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.dashboard-footer a:hover {
+  text-decoration: underline;
+}
+notification-icon {
+  font-size: 24px;
+  color: rgb(14, 14, 14);
+  cursor: pointer;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.notification-icon:hover {
+  color: #2084ff; /* Change to a highlight color when hovered */
+}

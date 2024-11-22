@@ -1,0 +1,108 @@
+.courses-container {
+    
+    padding: 20px;
+    text-align: center;
+}
+
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.course-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.course-card p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.course-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.course-button.gray {
+    background-color: #aaa;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    width: 800px;
+    max-width: 90%;
+    text-align: Center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.course-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 5px;
+    width: 100%; /* Ensures the grid spans the available width */
+}
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    width: 100%; /* Make it take up the full width of the container */
+    box-sizing: border-box; /* Ensures padding and border are included in width calculation */
+}
+
+.close-buttom {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #c0392b;
+}
+
