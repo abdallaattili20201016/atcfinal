@@ -1422,3 +1422,163 @@ i {
       display: none;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Section Title */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Calendar Section */
+  .calendar-section {
+    margin-top: 30px;
+  }
+
+
+
+  
+  
+  /* Arrow Styling */
+  .scroll-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    /* Add this to prevent hover shift */
+    padding: 0;
+    border: 2px solid transparent;
+  }
+  
+  .scroll-arrow:hover {
+    background: #0056b3; /* Darker blue on hover */
+    transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
+    border: 2px solid #0056b3; /* Add a consistent border */
+  }
+  
+  
+  
+  /* Courses Row Wrapper */
+  .courses-row-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-right: 50px; /* Space for the arrow */
+  }
+  
+  .courses-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  .courses-row::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for cleaner design */
+  }
+  
+  /* Course Card Styling */
+  .course-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 250px; /* Fixed width for horizontal scrolling */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  

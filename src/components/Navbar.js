@@ -26,10 +26,11 @@ const Navbar = () => {
                         <li class="navItem"><a href="/ViewProfile">Profile Settings</a></li>
                         <li class="navItem"><a href="/Messages">Messages</a></li>
                         <li class="navItem"><a href="/courses">Courses</a></li>
+                        <li class="navItem"><a href="/MyCourses">My Courses</a></li>
                         <li class="navItem"><a href="/FinishCoures">Finish Coures</a></li>
                         <li class="navItem"><a href="/certificates">Certificates</a></li>
                         <li class="navItem"><a href="/PaymentPage">Payment</a></li>
-                        <li class="navItem"><a href="/about-us">About Us</a></li>
+                        <li class="navItem"><a href="/AboutUs">About Us</a></li>
                         <li class="navItem"><a href="/contact-us">Contact Us</a></li>
                         <li class="navItem"><a href="/login">logout</a></li>
                     </ul>

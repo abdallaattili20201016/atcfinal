@@ -10,6 +10,9 @@ import Messages from './pages/Trainee/Messages';
 import Calendar from './pages/Calendar'; // Adjust the path if necessary
 import PaymentPage from './pages/Trainee/PaymentPage';
 import FinishCoures from './pages/Trainee/FinishCoures';
+import CourseDetails from './pages/Trainee/CourseDetails';
+import MyCourses from './pages/Trainee/MyCourses';
+import AboutUs from './pages/Trainee/AboutUs';
 
 import ViewProfileAdmin from './pages/Admin/ViewProfileAdmin';
 import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -40,6 +43,9 @@ const routes = [
   { path: '/Calendar', element: <Calendar /> }, 
   { path: '/PaymentPage', element: <PaymentPage /> },
   { path: '/FinishCoures', element: <FinishCoures /> }, 
+  { path: '/CourseDetails/:courseId', element: <CourseDetails /> }, 
+  { path: '/MyCourses', element: <MyCourses /> }, 
+  { path: '/AboutUs', element: <AboutUs /> }, 
 
   { path: '/admin', element: <AdminDashboard /> },
   { path: '/admin/Users', element: <UserManagement /> },
@@ -55,6 +61,7 @@ const routes = [
   { path: '/Trainer/ViewProfileTrainer', element: <ViewProfileTrainer /> },
   { path: '/Trainer/TrainerAnnouncements', element: <TrainerAnnouncements /> },
   
+  { path: '*', element: <h1>Page Not Found</h1> },
 
 
 ];
