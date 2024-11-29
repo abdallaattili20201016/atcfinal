@@ -31,7 +31,7 @@ import TrainerAnnouncements from './pages/Trainer/TrainerAnnouncements';
 
 
 const routes = [
-  { path: '/', element: <Login /> }, 
+  { path: '/', element: <Login /> ,}, 
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
   { path: '/forgot-password', element: <ForgotPassword /> },

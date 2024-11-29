@@ -4,29 +4,41 @@ import "../../styles/Styles.css";
 import Navbar from '../../components/Navbar';
 
 const MyCourses = () => {
-    const [courses, setCourses] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [courses, setCourses] = useState([]); // To hold course data
+    const [loading, setLoading] = useState(true); // To show loading state
+    const [error, setError] = useState(null); // To display errors if any
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Mock API response
-        const mockCourses = [
-            { id: 1, name: "Principles of Probability" },
-            { id: 2, name: "Data Structures" },
-            { id: 3, name: "Introduction to Machine Learning" },
-        ];
+        const fetchCourses = async () => {
+            try {
+                // Fetch courses from the backend
+                const response = await fetch('http://localhost:5000/api/my-courses', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${localStorage.getItem('token')}`, // Add auth token
+                    },
+                });
 
-        // Simulate API call
-        setTimeout(() => {
-            setCourses(mockCourses);
-            setLoading(false);
-        }, 1000); // Simulated delay
+                if (!response.ok) {
+                    throw new Error('Failed to fetch courses');
+                }
+
+                const data = await response.json();
+                setCourses(data);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCourses();
     }, []);
 
     const handleCourseClick = (courseId) => {
-        navigate(`/CourseDetails/${courseId}`);
-
+        navigate(`/CourseDetails/${courseId}`); // Navigate to CourseDetails page
     };
 
     if (loading) return <p>Loading courses...</p>;
@@ -40,11 +52,11 @@ const MyCourses = () => {
                 <div className="dashboard-container">
                     {courses.map((course) => (
                         <div
-                            key={course.id}
+                            key={course._id} // Use the course's ID
                             className="dashboard-card"
-                            onClick={() => handleCourseClick(course.id)}
+                            onClick={() => handleCourseClick(course._id)} // Pass ID on click
                         >
-                            <h3>{course.name}</h3>
+                            <h3>{course.name}</h3> {/* Display course name */}
                         </div>
                     ))}
                 </div>
@@ -54,6 +66,8 @@ const MyCourses = () => {
 };
 
 export default MyCourses;
+
+
 
 
 
