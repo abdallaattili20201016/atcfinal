@@ -33,6 +33,7 @@ const Login = () => {
 
       if (data || status == 200) {
         localStorage.setItem("token", data.token);
+        toast.success("Login successful. Redirecting...");
         requestGetUserInfo();
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -56,14 +57,14 @@ const Login = () => {
       if (data && status == 200) {
         toast.success(message);
         localStorage.setItem("user", JSON.stringify(data));
-        // if (data.role === "admin") {
-        navigate("/dashboard", { replace: true });
-        // }
-        // else if (data.role === "student") {
-        //   navigate("/student");
-        // } else {
-        //   navigate("/teacher");
-        // }
+        if (data.role === "admin") {
+        navigate("/admin", { replace: true });
+        }
+        else if (data.role === "trainee") {
+          navigate("/dashboard");
+        } else {
+          navigate("/Trainer/TrainerDashboard");
+        }
       } else {
         toast.error("Something went wrong. Please try again.");
         return;

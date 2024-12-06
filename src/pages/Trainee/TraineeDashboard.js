@@ -21,7 +21,7 @@ const TraineeDashboard = () => {
     };
 
     const navigate = useNavigate();
-    const traineeName = "Abdallah";
+    const traineeName = JSON.parse(localStorage.getItem('user')).name;
 
     const handleLogout = () => {
         localStorage.clear();

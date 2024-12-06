@@ -34,7 +34,9 @@ const Navbar = () => {
                     <li class="navItem"><a href="/Admin/CourseManagement"><span role="img" aria-label="courses">📚</span>Course Management</a></li>
                     <li class="navItem"><a href="/Admin/Reports"><span role="img" aria-label="reports">📊</span>Reports</a></li>
                     <li class="navItem"><a href="/Admin/Users"><span role="img" aria-label="users">👥</span>Users</a></li>
-                    <li class="navItem"><a href="/login"><span role="img" aria-label="logout">🔓</span>logout</a></li>
+                    <li class="navItem"><a href="/login" onClick={() => {
+                localStorage.setItem("token", "");
+              }}><span role="img" aria-label="logout">🔓</span>logout</a></li>
                 </ul>
             </div>
 

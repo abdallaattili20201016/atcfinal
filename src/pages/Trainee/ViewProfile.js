@@ -5,11 +5,14 @@ import '../../styles/Styles.css';
 import Navbar from '../../components/Navbar';
 
 const ViewProfile = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || {};
+    const phoneNumber = user.phone ? user.phone : '00000000';
+
     const [editMode, setEditMode] = useState(false);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [address, setAddress] = useState("");
-    const [phone, setPhone] = useState("+962 7");
+    const [name, setName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
+    const [address, setAddress] = useState(user.address);
+    const [phone, setPhone] = useState(phoneNumber.startsWith('+962') ? phoneNumber : '+9627' + phoneNumber);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -24,6 +27,8 @@ const ViewProfile = () => {
             alert('Please enter a valid email address (must contain "@" and end with ".com").');
             return; // Stop execution if email is invalid
         }
+        const updatedUser = { name, email, address, phone };
+        localStorage.setItem('user', JSON.stringify(updatedUser));
         setEditMode(false);
         alert('Your information has been updated.');
     };
