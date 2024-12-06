@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
-import '../../styles/Styles.css';
-import Navbar from '../../components/Navbar';
+import React, { useState, useRef } from "react";
+import "../../styles/Styles.css";
+import Navbar from "../../components/Navbar";
 
 const Courses = () => {
   const enrolledRowRef = useRef(null);
@@ -10,27 +10,52 @@ const Courses = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   const enrolledCourses = [
-    { id: 1, title: 'React Basics', description: 'Learn the basics of React.' },
-    { id: 2, title: 'Advanced JavaScript', description: 'Deep dive into JS concepts.' },
-    { id: 3, title: 'CSS Mastery', description: 'Become a CSS expert.' },
+    { id: 1, title: "React Basics", description: "Learn the basics of React." },
+    {
+      id: 2,
+      title: "Advanced JavaScript",
+      description: "Deep dive into JS concepts.",
+    },
+    { id: 3, title: "CSS Mastery", description: "Become a CSS expert." },
+    {
+      id: 4,
+      title: "Advanced JavaScript",
+      description: "Deep dive into JS concepts.",
+    },
   ];
 
   const availableCourses = [
-    { id: 4, title: 'Node.js Fundamentals', description: 'Introduction to Node.js.' },
-    { id: 5, title: 'Database Management', description: 'Learn SQL and NoSQL.' },
-    { id: 6, title: 'UI/UX Design', description: 'Design engaging interfaces.' },
-    { id: 7, title: 'Project Management', description: 'Learn project management basics.' },
+    {
+      id: 4,
+      title: "Node.js Fundamentals",
+      description: "Introduction to Node.js.",
+    },
+    {
+      id: 5,
+      title: "Database Management",
+      description: "Learn SQL and NoSQL.",
+    },
+    {
+      id: 6,
+      title: "UI/UX Design",
+      description: "Design engaging interfaces.",
+    },
+    {
+      id: 7,
+      title: "Project Management",
+      description: "Learn project management basics.",
+    },
   ];
 
   const courseDetails = {
-    trainer: 'Ammar Ouda',
-    divisionNumber: '1516',
-    hallLocation: 'Floor 3',
-    lectureTime: '07:00 PM - 09:00 PM',
-    courseDate: '08/09/2024 - 01/12/2024',
-    attendanceRate: '(86%) 12/14',
-    examMark: '90/100',
-    examResult: 'Passed',
+    trainer: "Ammar Ouda",
+    divisionNumber: "1516",
+    hallLocation: "Floor 3",
+    lectureTime: "07:00 PM - 09:00 PM",
+    courseDate: "08/09/2024 - 01/12/2024",
+    attendanceRate: "(86%) 12/14",
+    examMark: "90/100",
+    examResult: "Passed",
   };
 
   const openModal = (course) => {
@@ -44,7 +69,7 @@ const Courses = () => {
   };
 
   const handleScroll = (rowRef) => {
-    rowRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    rowRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
 
   return (
@@ -52,7 +77,11 @@ const Courses = () => {
       <Navbar />
       <div className="ViewPage">
         {/* Enrolled Courses */}
-        <h2 className="section-heading">Enrolled Courses</h2>
+        <center>
+          <h2 className="section-heading pageTitle">Courses</h2>
+        </center>
+        <h2 className="section-heading pageTitle">Enrolled Courses</h2>
+
         <div className="courses-row-wrapper">
           <div className="courses-row" ref={enrolledRowRef}>
             {enrolledCourses.map((course) => (
@@ -60,7 +89,7 @@ const Courses = () => {
                 <h3>{course.title}</h3>
                 <p>{course.description}</p>
                 <button
-                  className="course-button gray"
+                  className="course-button sysDarkBlue"
                   onClick={() => openModal(course)}
                 >
                   View Details
@@ -77,7 +106,7 @@ const Courses = () => {
         </div>
 
         {/* Available Courses */}
-        <h2 className="section-heading">Available Courses</h2>
+        <h2 className="section-heading pageTitle ">Available Courses</h2>
         <div className="courses-row-wrapper">
           <div className="courses-row" ref={availableRowRef}>
             {availableCourses.map((course) => (

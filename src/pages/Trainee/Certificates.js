@@ -28,7 +28,7 @@ const Certificates = () => {
     <>
       <Navbar />
       <div className="ViewPage">
-        <h1 className="page-title">Certificates</h1>
+        <center><h1 className="pageTitle">Certificates</h1></center>
         <div className="filter-container">
           <input
             type="text"
@@ -78,13 +78,13 @@ const Certificates = () => {
             ))}
           </tbody>
         </table>
-        <div className="whatsapp-contact">
+        {/* <div className="whatsapp-contact">
           <p>Need help? Contact us on WhatsApp:</p>
           <a href="https://wa.me/+962788649217" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-whatsapp whatsapp-icon"></i>
             +962788649217
           </a>
-        </div>
+        </div> */}
       </div>
     </>
   );

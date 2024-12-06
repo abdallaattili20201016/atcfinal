@@ -8,12 +8,11 @@ const AboutUs = () => {
       <Navbar />
       <div className="ViewPage">
         {/* Heading Section */}
-          <h1>About Us</h1>
-          <p>Your trusted partner in skill development and academic excellence.</p>
+          <center><h1 class="pageTitle">About Us</h1></center>
         
 
         {/* Overview Section */}
-        <section className="about-us-overview">
+        <section className="about-us-overview information" >
           <h2>Who We Are</h2>
           <p>
             At Academic Training Center, we are committed to providing quality training programs designed to empower
@@ -23,7 +22,7 @@ const AboutUs = () => {
         </section>
 
         {/* Programs Offered */}
-        <section className="about-us-programs">
+        <section className="about-us-programs information">
           <h2>Our Programs</h2>
           <ul>
             <li>Professional Certification Courses</li>
@@ -34,7 +33,7 @@ const AboutUs = () => {
         </section>
 
         {/* Achievements Section */}
-        <section className="about-us-achievements">
+        <section className="about-us-achievements information">
           <h2>Our Achievements</h2>
           <div className="info-section">
             <div className="achievement">
@@ -53,7 +52,7 @@ const AboutUs = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="about-us-cta">
+        <section className="about-us-cta information">
           <h2>Join Us Today</h2>
           <p>
             Take the next step in your learning journey. Explore our courses and become a part of our growing community

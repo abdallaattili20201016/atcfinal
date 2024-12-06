@@ -5,7 +5,12 @@
     bottom: 0;
     width: 35%;
     height: 100%;
-    background: linear-gradient(to bottom right, #1d3bb3, #0a1a4d);
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #4c669f, #0a1a4d);
+}
+.pageTitle{
+    color: #0a1a4d;
 }
 /* Header Styles */
 .header {
@@ -41,9 +46,9 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-weight: bolder;
     text-align: center;
-    margin-top: 20%;
 }
 
 .header-logo {
@@ -109,14 +114,16 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 50%;
+    width: 65%;
     height: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    font-family: 'Franklin Gothic Medium';
+
+    /* padding: 20px; */
 }
 
-.contentDivsignup {
+/* .contentDivsignup {
     position: fixed;
     top: 0;
     left: 0;
@@ -130,9 +137,9 @@
     padding-bottom: 0;
     font-family: 'Franklin Gothic Medium';
 
-}
+} */
 
-.forgot-password-container {
+/* .forgot-password-container {
     max-width: 400px;
     width: 100%;
     padding: 40px;
@@ -140,16 +147,22 @@
     background-color: white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
+} */
 /* log in */
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .loginInput {
-    width: 100%;
+    width: calc(100% - 20px);
+    max-width:300px;
     padding: 12px;
     margin: 10px 0;
     border: none;
-    border-bottom: 1px solid #192f6a;
+    border-bottom: 1px solid #4c669f;
     border-radius: 0;
-
 }
 
 .loginInput:focus {
@@ -159,7 +172,8 @@
 
 }
 .loginButton {
-    width: 100%;
+    width: 100% ;
+    max-width:300px;
     padding: 12px;
     color: white;
     background-color: #4c669f;
@@ -176,23 +190,31 @@
 }
 
 .login-container {
-    width: 40%;
-    margin-top: 25%;
+    width: 50%;
+    max-width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .loginTitle {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #0a1a4d;
     font-size: 30px;
 }
 
 .loginLabel {
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333;
+    color: #0a1a4d;
 }
+.havAnAccount *{
+    text-decoration: none;
+    color: #4c669f;
 
+}
 
 /**/
 .btn {
@@ -250,12 +272,16 @@ small {
 .form-group {
     margin-bottom: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 
 .extra-buttons {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     margin-top: 10px;
 }
 
@@ -415,6 +441,7 @@ input {
     left: 21%;
     top: 5%;
     bottom: 5%;
+    right: 2%;
     width: -webkit-fill-available;
     /* width: 78%; */
 }
@@ -793,9 +820,9 @@ input {
     float: left;
     height: 100%;
     width: 20%;
-    background: linear-gradient(to bottom right, #1d3bb3, #0a1a4d);
+    background: linear-gradient(to bottom right, #4c669f, #0a1a4d);
     padding-top: 40px;
-    color: #c1c2c3;
+    color: #ffffff;
     position: fixed;
     z-index: 3;
     top: 0px;
@@ -812,7 +839,7 @@ input {
     /* min-width: fit-content; */
     width: 25%;
     padding-top: 40px;
-    color: #c1c2c3;
+    color: #ffffff;
     position: fixed;
     z-index: 3;
     top: 0px;
@@ -834,8 +861,8 @@ input {
     height: fit-content;
     width: fit-content;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     cursor: pointer;
     padding-bottom: 10px;
     border-bottom: #ddd 1px solid;
@@ -857,7 +884,7 @@ input {
     position: relative;
     margin-top: 5px;
     height: fit-content;
-    color: #c1c2c3;
+    color: #ffffff;
     padding: 4px 5px;
     white-space: nowrap;
     cursor: pointer;
@@ -872,7 +899,7 @@ input {
 
 .navItem a {
     text-decoration: none;
-    color: #c1c2c3;
+    color: #fff;
 }
 
 li.navItem {
@@ -882,7 +909,7 @@ li.navItem {
 
 .navItem:hover {
     white-space: nowrap;
-    background-color: #444;
+    background-color: #00000027;
     cursor: pointer;
 }
 
@@ -1048,49 +1075,6 @@ h4 {
     width: fit-content;
 }
 
-/* ************************************************* Request and Respons Examples ********************************************* */
-/* .exampleRequestRespons {
-    background-color: #fafafa;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.divTitle {
-    text-align: center;
-}
-
-.tab {
-    overflow: hidden;
-}
-
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    transition: 0.3s;
-    font-size: 15px;
-}
-
-.tab button:hover {
-    background-color: #aaa;
-}
-
-.tab button.active {
-    border-bottom: orange 4px solid;
-}
-
-.tabcontent {
-    display: none;
-    padding: 10px;
-    border-top: none;
-}
- */
-
 /* ************************************** Notes styles ************************************** */
 .note,
 .errorHandling,
@@ -1124,8 +1108,11 @@ h4 {
 }
 
 .information {
-    background-color: #e3e3f7;
-    border-left: 4px #6161ff solid;
+    background-color: rgba(76, 102, 159, 0.199);
+    border-left: 4px #4c669f solid;
+    display: flex;
+    flex-direction: column;
+    color: #4c669f;
 }
 
 .done {
@@ -1519,8 +1506,8 @@ i {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
-    color: white;
+    /* background: rgba(0, 123, 255, 0.8);  */
+    color: #000;
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -1534,13 +1521,13 @@ i {
     transition: background 0.3s ease, transform 0.3s ease;
     /* Add this to prevent hover shift */
     padding: 0;
-    border: 2px solid transparent;
+    
   }
   
   .scroll-arrow:hover {
-    background: #0056b3; /* Darker blue on hover */
+    background: #0000001a; /* Darker blue on hover */
     transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
-    border: 2px solid #0056b3; /* Add a consistent border */
+    /* border: 2px solid #0056b3; Add a consistent border */
   }
   
   
@@ -1548,7 +1535,6 @@ i {
   /* Courses Row Wrapper */
   .courses-row-wrapper {
     position: relative;
-    display: flex;
     align-items: center;
     margin-bottom: 20px;
     padding-right: 50px; /* Space for the arrow */

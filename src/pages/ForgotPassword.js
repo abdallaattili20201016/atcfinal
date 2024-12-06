@@ -1,6 +1,6 @@
 // src/ForgotPassword.js
 import React, { useState } from 'react';
-import '../styles/ForgotPassword.css'; // Import the CSS for styling
+import '../styles/Styles.css'; // Import the CSS for styling
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -16,21 +16,42 @@ const ForgotPassword = () => {
     };
 
     return (
+        <>
+        <div className="allContent">
+        <div className="fancyBG">
+          {/* <img src="/logoo.jpg" alt="Logo" className="logo-image" /> */}
+          <span className="header-text">
+            Academic
+            <br />
+            <br />
+            Training
+            <br />
+            <br /> Center
+          </span>
+        </div>
+        <div className="contentDiv">
+        <div className="login-container">
         
-        <div className="forgot-password-container">
-            <h2>Forgot Password</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className="loginTitle">Forgot Password</h2>
+            <form onSubmit={handleSubmit} className="loginForm">
+            <div className="form-group">
+            <label className="loginLabel">Enter your email</label>
                 <input
                     type="email"
-                    placeholder="Enter your email"
+                    className="loginInput"
+                    placeholder="example@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <button type="submit">Send Reset Instructions</button>
+                </div>
+                <button type="submit" class="loginButton">Send Reset Instructions</button>
             </form>
             {message && <p>{message}</p>}
         </div>
+        </div>
+        </div>
+        </>
     );
 };
 

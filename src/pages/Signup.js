@@ -88,17 +88,19 @@ const Signup = () => {
     <>
       <div class="allContent">
         <div class="fancyBG">
-          <img src="/logoo.jpg" alt="Logo" class="logo-image" />
+          {/* <img src="/logoo.jpg" alt="Logo" class="logo-image" /> */}
           <span class="header-text">
             Academic<br></br>
             <br></br>Training<br></br>
             <br></br> Center
           </span>
         </div>
-        <div class="contentDivsignup">
-          <div className="signup-container">
+        <div class="contentDiv">
+          <div className="login-container">
             <h2 class="loginTitle">SignUp</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="loginForm">
+            <div className="form-group">
+            <label className="loginLabel">Student Name</label>
               <input
                 type="text"
                 name="name"
@@ -107,6 +109,7 @@ const Signup = () => {
                 value={formData.name}
                 onChange={handleChange}
               />
+              <label className="loginLabel">Username</label>
               <input
                 type="text"
                 name="username"
@@ -115,19 +118,21 @@ const Signup = () => {
                 value={formData.username}
                 onChange={handleChange}
               />
+              <label className="loginLabel">Email</label>
               <input
                 type="email"
                 name="email"
                 class="loginInput"
-                placeholder="Email"
+                placeholder="example@example.com"
                 value={formData.email}
                 onChange={handleChange}
               />
+              <label className="loginLabel">Password</label>
               <input
                 type="password"
                 name="password"
                 class="loginInput"
-                placeholder="Password"
+                placeholder="********"
                 value={formData.password}
                 onChange={handleChange}
               />
@@ -135,13 +140,14 @@ const Signup = () => {
               <div className="admin-contact">
                 Are you a Trainer? <a href="/admin-contact">Contact an admin</a>
               </div>
+              </div>
               <button type="submit" class="loginButton">
                 Verify
               </button>
             </form>
             {message && <p>{message}</p>}
-            <p>
-              Already have an account? <Link to="/">Login</Link>{" "}
+            <p class="havAnAccount">
+              Already have an account? <Link to="/" >Login</Link>{" "}
               {/* Use Link for navigation */}
             </p>
           </div>
