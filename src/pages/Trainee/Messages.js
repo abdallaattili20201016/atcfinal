@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../styles/Styles.css";
 import "../../styles/Messages.css";
 import Navbar from "../../components/Navbar";
-import personImage from 'C:/Users/USER/Documents/GitHub/atcfinal/src/assets/images/person.jpeg';
+import personImage from '../../assets/images/person.jpeg';
 
 const MessagesPage = () => {
   const [messages, setMessages] = useState([
