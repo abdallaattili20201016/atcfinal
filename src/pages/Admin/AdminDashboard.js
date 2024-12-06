@@ -7,6 +7,7 @@ import DashboardAnnouncements from '../../components/DashboardAnnouncements.js';
 import { Link } from 'react-router-dom';
 
 const AdminDashboard = () => {
+
   const [adminName, setAdminName] = useState('');
 
   useEffect(() => {

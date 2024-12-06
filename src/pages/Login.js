@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Styles.css";
-import { API_URL } from "../constants/config";
 import { ApiRoutes } from "../constants/ApiRoutes";
 import { toast } from "react-toastify";
 import useFetch from "../helpers/useFetch";
@@ -20,63 +19,69 @@ const Login = () => {
       username: username,
       password: password,
     },
-    onFinish: ({ data, status, error, message }) => {
+    onFinish: async ({ data, status, error, message }) => {
       toast.dismiss();
-      if (error && status != 200) {
+    
+      if (error && status !== 200) {
         toast.error("Error: " + error);
         return;
       }
-      if (message && status != 200) {
+    
+      if (message && status !== 200) {
         toast.warning("Error: " + message);
         return;
       }
-
-      if (data || status == 200) {
+    
+      if (data || status === 200) {
         localStorage.setItem("token", data.token);
-        toast.success("Login successful. Redirecting...");
-        requestGetUserInfo();
+        toast.success("Login successful. Fetching user info...");
+        
+        window.location.reload();
       } else {
         toast.error("Something went wrong. Please try again.");
         return;
       }
     },
+    
   });
+
   const [responseGetUserInfo, requestGetUserInfo] = useFetch({
     endpoint: ApiRoutes.GetUserInfo,
     onFinish: ({ data, status, error, message }) => {
       toast.dismiss();
-      if (error && status != 200) {
+      if (error && status !== 200) {
         toast.error("Error: " + error);
         return;
       }
-      if (message && status != 200) {
+      if (message && status !== 200) {
         toast.error("Message: " + message);
         return;
       }
-
-      if (data && status == 200) {
+      if (data || status === 200) {
         toast.success(message);
         localStorage.setItem("user", JSON.stringify(data));
-        if (data.role === "admin") {
-        navigate("/admin", { replace: true });
-        }
-        else if (data.role === "trainee") {
-          navigate("/dashboard");
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user !== null) {
+          if (user.role === "admin") {
+            navigate("/admin", { replace: true });
+          } else if (user.role === "trainee") {
+            navigate("/dashboard", { replace: true });
+          } else {
+            navigate("/Trainer/TrainerDashboard", { replace: true });
+          }
         } else {
-          navigate("/Trainer/TrainerDashboard");
+          toast.error("User information could not be loaded. Please try again.");
         }
-      } else {
-        toast.error("Something went wrong. Please try again.");
-        return;
-      }
+      } else toast.error("Something went wrong. Please try again.");
+      return;
     },
   });
 
   useEffect(() => {
-    if (localStorage.getItem("token") != null) {
+    if (localStorage.getItem("token") !== null) {
       requestGetUserInfo();
     }
-  }, []);
+  }, [requestGetUserInfo]);
 
   return (
     <>

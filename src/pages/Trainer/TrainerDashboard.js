@@ -4,6 +4,7 @@ import "../../styles/Styles.css";
 import Calendar from "react-calendar";
 
 const TrainerDashboard = () => {
+
   const trainerName = JSON.parse(localStorage.getItem("user")).name;
 
   return (

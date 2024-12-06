@@ -31,16 +31,16 @@ const Signup = () => {
     },
     onFinish: ({ data, status, error, message }) => {
       toast.dismiss();
-      if (error && status != 200) {
+      if (error && status !== 200) {
         toast.error("Error: " + error);
         return;
       }
-      if (message && status != 200) {
+      if (message && status !== 200) {
         toast.error("Error: " + message);
         return;
       }
 
-      if (data || status == 200) {
+      if (data || status === 200) {
         if (message) {
           toast.success(message);
         }
