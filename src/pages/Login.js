@@ -87,7 +87,7 @@ const Login = () => {
     <>
       <div className="allContent">
         <div className="fancyBG">
-          <img src="/logoo.jpg" alt="Logo" className="logo-image" />
+          {/* <img src="/logoo.jpg" alt="Logo" className="logo-image" /> */}
           <span className="header-text">
             Academic
             <br />
@@ -101,13 +101,14 @@ const Login = () => {
           <div className="login-container">
             <h2 className="loginTitle">Login</h2>
             <form
+              className="loginForm"
               onSubmit={(e) => {
                 e.preventDefault(); // Prevent page reload
                 request(); // Trigger the request
               }}
             >
               <div className="form-group">
-                <label className="loginLabel">Username:</label>
+                <label className="loginLabel">Username</label>
                 <input
                   type="text"
                   name="username"
@@ -118,7 +119,7 @@ const Login = () => {
                   required
                 />
 
-                <label className="loginLabel">Password:</label>
+                <label className="loginLabel">Password</label>
                 <input
                   type="password"
                   name="password"
@@ -129,17 +130,17 @@ const Login = () => {
                   required
                 />
               </div>
-              <button type="submit" className="btn-primary">
+              <button type="submit" className="btn-primary" class="loginButton">
                 Login
               </button>
 
               <div className="extra-buttons">
-                <Link to="/forgot-password" className="forgot-password">
+                <a href="/forgot-password" className="forgot-password">
                   Forgot Password?
-                </Link>
-                <Link to="/signup" className="sign-up">
+                </a>
+                <a href="/signup" className="sign-up">
                   Sign Up
-                </Link>
+                </a>
               </div>
             </form>
           </div>

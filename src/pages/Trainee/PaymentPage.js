@@ -21,7 +21,7 @@ const PaymentPage = () => {
     <>
       <Navbar />
       <div className="ViewPage">
-        <h2 className="section-title">Installments</h2>
+        <center><h2 className="section-title">Installments</h2></center>
         <table className="installments-table">
           <thead>
             <tr>

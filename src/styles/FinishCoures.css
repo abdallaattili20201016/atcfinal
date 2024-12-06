@@ -3,7 +3,13 @@
     padding: 20px;
     text-align: center;
 }
-
+.pageTitle {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0a1a4d;
+    
+  }
 .courses-grid {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +25,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .course-card h3 {
@@ -39,11 +49,15 @@
     cursor: pointer;
     font-size: 14px;
     color: white;
+    bottom: 20px;
     transition: background-color 0.3s;
 }
 
 .course-button.gray {
     background-color: #aaa;
+}
+.course-button.sysDarkBlue {
+    background-color: #2a3e76;
 }
 
 .modal-overlay {
@@ -85,24 +99,24 @@
     justify-content: space-between;
     padding: 10px;
     background: #f9f9f9;
-    border: 5px solid #ddd;
+    border: 5px solid #2a3e763b;
     border-radius: 10px;
     width: 100%; /* Make it take up the full width of the container */
     box-sizing: border-box; /* Ensures padding and border are included in width calculation */
 }
 
-.close-buttom {
+.close-btn {
     display: block;
     margin: 10px auto 0;
     padding: 10px 20px;
-    background-color: #e74c3c;
+    background-color: #2a3e76;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.close-button:hover {
-    background-color: #c0392b;
+.close-btn:hover {
+    background-color: #0a1a4d;
 }
 
