@@ -5,11 +5,15 @@ import '../../styles/Styles.css';
 import AdminNavbar from '../../components/AdminNavbar';
 
 const ViewProfileAdmin = () => {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    const phoneNumber = user.phone ? user.phone : '00000000';
+
     const [editMode, setEditMode] = useState(false);
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [address, setAddress] = useState('');
-    const [phone, setPhone] = useState('+962 7');
+    const [name, setName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
+    const [address, setAddress] = useState(user.address);
+    const [phone, setPhone] = useState(phoneNumber.startsWith('+962') ? phoneNumber : '+9627' + phoneNumber);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -19,11 +23,17 @@ const ViewProfileAdmin = () => {
 
     const handleEditToggle = () => setEditMode(!editMode);
 
+    const validateEmail = (email) => {
+        return /^[\w-]+@([\w-]+\.)+com$/.test(email);
+    };
+
     const handleSave = () => {
         if (!validateEmail(email)) {
             alert('Please enter a valid email address (must contain "@" and end with ".com").');
             return;
         }
+        const updatedUser = { name, email, address, phone };
+        localStorage.setItem('user', JSON.stringify(updatedUser)); // Save to localStorage
         setEditMode(false);
         alert('Your information has been updated.');
     };
@@ -32,11 +42,9 @@ const ViewProfileAdmin = () => {
 
     const handleNameChange = (e) => {
         const value = e.target.value;
-        // Only allow letters and spaces
         if (/^[a-zA-Z\s]*$/.test(value)) {
             setName(value);
         }
-        
     };
 
     const handlePhoneChange = (e) => {
@@ -51,11 +59,6 @@ const ViewProfileAdmin = () => {
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value); 
-    };
-
-    const validateEmail = (email) => {
-        // Regex to validate email (must contain "@" and ".com")
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
     return (

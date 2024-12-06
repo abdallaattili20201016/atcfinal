@@ -4,11 +4,15 @@ import TrainerNavbar from "../../components/TrainerNavbar";
 import WarningOverlay from "../../components/WarningOverlay";
 
 const ViewProfile = () => {
+
+  const user = JSON.parse(localStorage.getItem('user')) || {};
+  const phoneNumber = user.phone ? user.phone : '00000000';
+
   const [profile, setProfile] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    phone: "0791234567",
-    address: "Amman",
+    name: user.name,
+    email: user.email,
+    phone: phoneNumber.startsWith('+962') ? phoneNumber : '+9627' + phoneNumber,
+    address: user.address,
   });
 
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -31,13 +35,13 @@ const ViewProfile = () => {
     }
 
     // Validate Email
-    if (!/^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/.test(editedProfile.email)) {
-      newErrors.email = "Enter a valid email address.";
+    if (!/^[\w-]+@([\w-]+\.)+com$/.test(editedProfile.email)) {
+      newErrors.email = "Enter a valid email address ending with '.com'.";
     }
 
-    // Validate Phone
-    if (!/^\d{10}$/.test(editedProfile.phone)) {
-      newErrors.phone = "Phone number must be exactly 10 digits.";
+    // Validate Phone (ignoring country code)
+    if (!/^\+?\d{0,3}?\s?\d{10}$/.test(editedProfile.phone)) {
+      newErrors.phone = "Phone number must be exactly 10 digits, excluding the country code.";
     }
 
     return newErrors;
@@ -50,6 +54,7 @@ const ViewProfile = () => {
       setErrors(newErrors);
     } else {
       setProfile(editedProfile);
+      localStorage.setItem('user', JSON.stringify(editedProfile)); // Save to localStorage
       setIsOverlayVisible(false);
       setSaveConfirmationVisible(true);
     }

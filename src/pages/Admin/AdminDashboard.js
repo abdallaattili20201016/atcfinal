@@ -1,14 +1,21 @@
 // src/pages/Admin/AdminDashboard.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminNavbar from '../../components/AdminNavbar';
 import '../../styles/Styles.css';
 import Calendar from 'react-calendar';
 import DashboardAnnouncements from '../../components/DashboardAnnouncements.js'; // Import Announcements component
 import { Link } from 'react-router-dom';
 
-const AdminName = "Ammar";
-
 const AdminDashboard = () => {
+  const [adminName, setAdminName] = useState('');
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.name) {
+      setAdminName(user.name);
+    }
+  }, []);
+
   const [announcements] = useState([
     {
       id: 1,
@@ -47,7 +54,7 @@ const AdminDashboard = () => {
       <div className="ViewPage">
         {/* Welcome Section */}
         <section className="welcome-section">
-          <h2>Welcome, {AdminName}!</h2>
+          <h2>Welcome, {adminName}!</h2>
         </section>
 
         {/* Quick Insights Section */}
