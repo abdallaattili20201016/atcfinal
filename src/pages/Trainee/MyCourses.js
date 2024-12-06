@@ -13,7 +13,7 @@ const MyCourses = () => {
         const fetchCourses = async () => {
             try {
                 // Fetch courses from the backend
-                const response = await fetch('http://localhost:5000/api/my-courses', {
+                const response = await fetch('http://localhost:5000/api/My-Courses', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -27,7 +27,8 @@ const MyCourses = () => {
 
                 const data = await response.json();
                 setCourses(data);
-            } catch (error) {
+            }
+             catch (error) {
                 setError(error.message);
             } finally {
                 setLoading(false);

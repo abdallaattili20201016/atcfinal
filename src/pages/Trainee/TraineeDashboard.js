@@ -28,8 +28,20 @@ const TraineeDashboard = () => {
         navigate('/');
     };
     const [posts, setPosts] = useState([
-        { id: 1, author: "Ammar", title: "New Course Available!", content: "We’ve added a new course on Data Science. Enroll now!" },
-        { id: 2, author: "Yousef", title: "Assignment Due", content: "Remember to submit your assignments by the end of the week." },
+
+        { 
+            id: 1, 
+            author: "Ammar",
+             title: "New Course Available!", 
+             content: "We’ve added a new course on Data Science. Enroll now!"
+        },
+
+        { 
+            id: 2, 
+            author: "Yousef",
+             title: "Assignment Due", 
+             content: "Remember to submit your assignments by the end of the week." 
+        },
     ]);
 
 

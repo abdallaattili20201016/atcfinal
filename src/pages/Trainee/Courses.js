@@ -10,16 +10,50 @@ const Courses = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   const enrolledCourses = [
-    { id: 1, title: 'React Basics', description: 'Learn the basics of React.' },
-    { id: 2, title: 'Advanced JavaScript', description: 'Deep dive into JS concepts.' },
-    { id: 3, title: 'CSS Mastery', description: 'Become a CSS expert.' },
+    { 
+      id: 1, 
+      title: 'React Basics', 
+      description: 'Learn the basics of React.'
+    },
+
+    { 
+      id: 2,
+      title: 'Advanced JavaScript',
+      description: 'Deep dive into JS concepts.' 
+    },
+
+    { 
+      id: 3, 
+      title: 'CSS Mastery',
+      description: 'Become a CSS expert.' 
+    },
   ];
 
   const availableCourses = [
-    { id: 4, title: 'Node.js Fundamentals', description: 'Introduction to Node.js.' },
-    { id: 5, title: 'Database Management', description: 'Learn SQL and NoSQL.' },
-    { id: 6, title: 'UI/UX Design', description: 'Design engaging interfaces.' },
-    { id: 7, title: 'Project Management', description: 'Learn project management basics.' },
+    { 
+      id: 4,
+      title: 'Node.js Fundamentals',
+      description: 'Introduction to Node.js.' 
+    },
+
+    { 
+      id: 5, 
+      title: 'Database Management',
+      description: 'Learn SQL and NoSQL.' 
+    },
+
+    { 
+      id: 6,
+      title: 'UI/UX Design',
+      description: 'Design engaging interfaces.' 
+    },
+
+    { 
+      id: 7, 
+      title: 'Project Management',
+      description: 'Learn project management basics.'
+    },
+       
   ];
 
   const courseDetails = {

@@ -52,22 +52,44 @@ const Reports = () => {
     {
       category: "Financial",
       details: [
-        { metric: "Total Revenue", value: "$12,345" },
-        { metric: "Monthly Revenue", value: "January: $2,345, February: $3,123, March: $4,567" },
+
+        {
+          metric: "Total Revenue",
+           value: "$12,345" 
+        },
+
+        { 
+          metric: "Monthly Revenue",
+           value: "January: $2,345, February: $3,123, March: $4,567" 
+        },
       ],
     },
     {
       category: "Trainees",
       details: [
-        { metric: "Total Trainees", value: "120" },
-        { metric: "Majors", value: "Computer Science: 40, Business: 30, Engineering: 50" },
+        { 
+          metric: "Total Trainees", 
+          value: "120" 
+        },
+
+        { 
+          metric: "Majors", 
+          value: "Computer Science: 40, Business: 30, Engineering: 50"
+         },
       ],
     },
     {
       category: "Trainers",
       details: [
-        { metric: "Total Trainers", value: "15" },
-        { metric: "Courses Taught", value: "React Basics: Trainer A, Advanced JavaScript: Trainer B, Database Management: Trainer C" },
+        { 
+          metric: "Total Trainers",
+           value: "15" 
+        },
+
+        { 
+          metric: "Courses Taught", 
+          value: "React Basics: Trainer A, Advanced JavaScript: Trainer B, Database Management: Trainer C"
+         },
       ],
     },
   ];

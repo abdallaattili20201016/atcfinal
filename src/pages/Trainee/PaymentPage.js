@@ -8,9 +8,24 @@ const PaymentPage = () => {
   // Sample data for course and installments
   const courseCost = 300; // Total course cost
   const PaymentPages = [
-    { date: '05/09/2024', amount: 50, status: 'Paid' },
-    { date: '01/10/2024', amount: 50, status: 'Paid' },
-    { date: '05/11/2024', amount: 50, status: 'Paid' },
+
+    {
+      date: '05/09/2024', 
+      amount: 50,
+       status: 'Paid'
+    },
+
+    { 
+      date: '01/10/2024',
+       amount: 50, 
+       status: 'Paid' 
+    },
+
+    { 
+      date: '05/11/2024',
+       amount: 50,
+        status: 'Paid' 
+    },
   ];
 
   // Calculate the total paid and remaining balance

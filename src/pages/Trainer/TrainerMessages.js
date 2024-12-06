@@ -9,17 +9,42 @@ const MessagesPage = () => {
       id: 1,
       contact: 'yousef (Trainer)',
       chat: [
-        { sender: 'yousef', content: 'Hi there! How are you?', time: '10:00 AM' },
-        { sender: 'Me', content: 'I’m good, thank you! How about you?', time: '10:05 AM' },
-        { sender: 'yousef', content: 'Doing great! Just wanted to inform you about the course update.', time: '10:10 AM' },
+
+        { 
+          sender: 'yousef',
+           content: 'Hi there! How are you?', 
+           time: '10:00 AM' 
+        },
+
+        { 
+          sender: 'Me',
+           content: 'I’m good, thank you! How about you?',
+            time: '10:05 AM' 
+        },
+
+        { 
+          sender: 'yousef', 
+          content: 'Doing great! Just wanted to inform you about the course update.',
+           time: '10:10 AM' 
+        },
+
       ],
     },
     {
       id: 2,
       contact: 'Admin',
       chat: [
-        { sender: 'Admin', content: 'System maintenance is scheduled for Nov 25.', time: '2:00 PM' },
-        { sender: 'Me', content: 'Thanks for the update!', time: '2:10 PM' },
+        { 
+          sender: 'Admin',
+           content: 'System maintenance is scheduled for Nov 25.',
+            time: '2:00 PM' 
+        },
+
+        { 
+          sender: 'Me',
+           content: 'Thanks for the update!', 
+           time: '2:10 PM' 
+        },
       ],
     },
   ]);

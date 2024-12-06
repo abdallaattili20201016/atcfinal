@@ -10,9 +10,26 @@ const FinishCoures = () => {
     const [showDetailsModal, setShowDetailsModal] = useState(false);
 
     const finishedCourses = [
-        { id: 1, title: 'C++', status: 'Completed', buttonLabel: 'Finish course', buttonColor: 'gray' },
-        { id: 2, title: 'Modern web applications', status: 'Completed', buttonLabel: 'Finish course', buttonColor: 'gray' },
-        { id: 3, title: 'Information security', status: 'Completed', buttonLabel: 'Finish course', buttonColor: 'gray' },
+        { id: 1, 
+            title: 'C++', 
+            status: 'Completed',
+            buttonLabel: 'Finish course',
+             buttonColor: 'gray' 
+        },
+
+        { id: 2,
+             title: 'Modern web applications', 
+             status: 'Completed',
+              buttonLabel: 'Finish course', 
+              buttonColor: 'gray' 
+        },
+
+        { id: 3, 
+            title: 'Information security',
+             status: 'Completed',
+              buttonLabel: 'Finish course', 
+              buttonColor: 'gray' 
+        },
     ];
 
     const courseDetails = {

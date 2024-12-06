@@ -12,9 +12,10 @@ const CourseDetails = () => {
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
-      try {
+      try 
+      {
         // Fetch course details from the backend
-        const response = await fetch(`http://localhost:5000/api/my-courses/${courseId}`, {
+        const response = await fetch(`http://localhost:5000/api/My-Courses/${courseId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -28,9 +29,16 @@ const CourseDetails = () => {
 
         const data = await response.json();
         setCourse(data);
-      } catch (error) {
+      } 
+
+      catch (error) 
+      
+      {
         setError(error.message);
-      } finally {
+      } 
+
+      finally 
+      {
         setLoading(false);
       }
     };

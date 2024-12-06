@@ -6,18 +6,21 @@ import '../../styles/Styles.css';
 
 const AnnouncementsPage = () => {
   const [announcements, setAnnouncements] = useState([
+
     {
       id: 1,
       title: "System Maintenance Scheduled",
       description: "The system will be down on Nov 20 for 2 hours.",
       date: "2024-11-20",
     },
+
     {
       id: 2,
       title: "New Course Available: Data Science",
       description: "Enroll now for the Data Science course starting Nov 25.",
       date: "2024-11-18",
     },
+    
     {
       id: 3,
       title: "Important Deadline: Registration Ends",

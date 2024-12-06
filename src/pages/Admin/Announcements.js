@@ -11,18 +11,21 @@ const AnnouncementsPage = () => {
       description: 'The system will be down on Nov 20 for 2 hours.',
       date: '2024-11-20',
     },
+
     {
       id: 2,
       title: 'New Course Available',
       description: 'Enroll now for the Data Science course starting Nov 25.',
       date: '2024-11-18',
     },
+
     {
       id: 3,
       title: 'Important Deadline',
       description: 'Register before Nov 16 to secure your seat.',
       date: '2024-11-16',
     },
+    
   ]);
 
   const [filter, setFilter] = useState('');

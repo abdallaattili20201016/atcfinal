@@ -10,13 +10,39 @@ const TrainerReportsPage = () => {
 
   // Mock data for table (replace with API call later)
   const mockTraineeDetails = [
-    { name: 'John Doe', email: 'john@example.com', attendance: '95%', grade: 'A' },
-    { name: 'Jane Smith', email: 'jane@example.com', attendance: '87%', grade: 'B' },
+
+    {
+       name: 'John Doe',
+       email: 'john@example.com',
+        attendance: '95%', 
+        grade: 'A' 
+    },
+
+    { 
+      name: 'Jane Smith',
+       email: 'jane@example.com', 
+       attendance: '87%',
+        grade: 'B' 
+    },
+    
   ];
 
   const mockCourseDetails = [
-    { name: 'React Basics', trainees: 20, avgGrade: 'B+', time: '10:00 AM - 12:00 PM', location: 'Online' },
-    { name: 'Advanced JavaScript', trainees: 15, avgGrade: 'A', time: '2:00 PM - 4:00 PM', location: 'Room 302' },
+    { 
+      name: 'React Basics', 
+      trainees: 20, 
+      avgGrade: 'B+',
+       time: '10:00 AM - 12:00 PM', 
+       location: 'Online' 
+    },
+
+    { 
+      name: 'Advanced JavaScript', 
+      trainees: 15,
+       avgGrade: 'A',
+        time: '2:00 PM - 4:00 PM',
+         location: 'Room 302' 
+    },
   ];
 
   // Handle Report Type Selection

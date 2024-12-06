@@ -4,6 +4,7 @@ import '../../styles/Styles.css';
 
 const CourseManagement = () => {
   const [courses, setCourses] = useState([
+    
     {
       id: 1,
       name: "React Basics",
@@ -13,6 +14,7 @@ const CourseManagement = () => {
       status: "Active",
       students: 20,
     },
+
     {
       id: 2,
       name: "Data Science",
@@ -22,6 +24,7 @@ const CourseManagement = () => {
       status: "Inactive",
       students: 15,
     },
+
   ]);
 
   const [editOverlayVisible, setEditOverlayVisible] = useState(false);

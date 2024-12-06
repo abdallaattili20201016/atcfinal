@@ -4,9 +4,27 @@ import '../../styles/Styles.css';
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([
-    { id: 1, name: 'React Basics', trainees: 20, status: 'Active' },
-    { id: 2, name: 'Advanced JavaScript', trainees: 15, status: 'Active' },
-    { id: 3, name: 'Database Management', trainees: 10, status: 'Inactive' },
+
+    { 
+      id: 1,
+       name: 'React Basics', 
+       trainees: 20, 
+       status: 'Active' 
+    },
+
+    { 
+      id: 2,
+       name: 'Advanced JavaScript',
+        trainees: 15, 
+        status: 'Active' 
+    },
+
+    { 
+      id: 3,
+       name: 'Database Management',
+        trainees: 10,
+         status: 'Inactive' 
+    },
   ]);
 
   return (

@@ -9,9 +9,26 @@ const Certificates = () => {
   const [filter, setFilter] = useState('All');
 
   const courses = [
-    { name: 'Course 1', status: 'Approved', progress: '100%', comments: 'No comments' },
-    { name: 'Course 2', status: 'Pending', progress: '50%', comments: 'Pending approval' },
-    { name: 'Course 3', status: 'Pending', progress: '30%', comments: 'Requires revision' },
+    { 
+      name: 'Course 1', 
+      status: 'Approved', 
+      progress: '100%', 
+      comments: 'No comments' 
+    },
+
+    { 
+      name: 'Course 2', 
+      status: 'Pending', 
+      progress: '50%',
+       comments: 'Pending approval' 
+    },
+
+    { 
+      name: 'Course 3',
+      status: 'Pending',
+       progress: '30%',
+      comments: 'Requires revision' 
+    },
   ];
 
   const filteredCourses = courses.filter((course) => {
