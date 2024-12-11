@@ -58,7 +58,8 @@ const Navbar = () => {
             <a
               href="/login"
               onClick={() => {
-                localStorage.setItem("token", "");
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
               }}
             >
               logout

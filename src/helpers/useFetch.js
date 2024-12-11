@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
 import { API_URL } from "../constants/config";
-import { toast } from "react-toastify";
 
 const useFetch = (
   options = {
@@ -54,7 +53,7 @@ const useFetch = (
       .finally(() => {
         setLoading(false);
       });
-  }, [method, endpoint, params, body]);
+  }, [method, endpoint, params, body, access_token, onFinish]);
 
   return [{ data, error, loading }, request];
 };

@@ -1,20 +1,20 @@
 // src/components/AdminNavbar.js
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import '../styles/Styles.css'; // Adjust the path as needed
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../styles/Styles.css"; // Adjust the path as needed
 
 const Navbar = () => {
-    const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const toggleDrawer = () => {
-        setDrawerOpen(!drawerOpen);
-    };
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
 
-    const navigate = useNavigate();
-    const handleLogout = () => {
-        localStorage.clear(); // Clear stored data
-        navigate('/Login'); // Redirect to login page
-    };
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.clear(); // Clear stored data
+    navigate("/Login"); // Redirect to login page
+  };
 
     return (
         <div className={`sideNav  ${drawerOpen ? 'open' : ''}`}
@@ -45,6 +45,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
