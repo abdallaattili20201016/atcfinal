@@ -400,39 +400,72 @@ input {
 
 /* Welcome Section */
 .welcome-section {
-    margin-top: 50px;
     margin: 30px;
     text-align: left;
-    gap: 50px;
     width: 30%;
 }
 
 .welcome-section h2 {
     margin-top: 20px;
     font-size: 28px;
-    color: #333;
+    color: #0a1a4d;
     text-align: left;
     gap: 50px;
 }
+.dashboardPage{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
 
-/* Info Section */
-.info-section {
-    position: relative;
+
+.viewUsers {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 
 }
+/* Info Section */
+.info-section {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 
+}
+.information .info-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.nonLi{
+    list-style: none;
+}
+.hiddenRow{
+width: 0px;
+height: 0px;
+}
 .info-box {
-    width: 30%;
-    padding: 20px;
+    width: 75%;
+    height: fit-content;
+    padding-left: 2rem;
+    padding-right: 2rem;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-wrap: break-word;
-    flex: 2;
-    padding: 2rem;
+}
+.calender-Box{
+    width: fit-content;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    
 }
 
 /* Dashboard Cards Section */
@@ -462,31 +495,32 @@ input {
 }
 
 .dashboard-card {
-    width: 22%;
+    width: 100%;
     min-width: 200px;
     background-color: white;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
+    border-left: #0a1a4d 5px solid;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
+    color: #0a1a4d;
 }
 
 .dashboard-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .posts-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column;    
 }
 
 .post-card {
-    padding: 15px;
+    width: 90%;
     justify-content: center;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -500,19 +534,16 @@ input {
 .dashboard-link {
     margin-top: 10px;
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #1a2b6dc9;
     color: white;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
-}
-.dashboard-link {
-    background-color: #2980b9;
+    background: linear-gradient(to left, #4c669fd3, #0a1a4d);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
 }
+
 /*/////////////////////////////////////////////////////////////////*/
 
 .dashboard-link:hover {
@@ -570,6 +601,12 @@ input {
     height: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+}
+.courses-table th{
+    background-color: #4c669f;
+    color: white;
+    text-align: center;
+    padding: 5px;
 }
 
 /* Drawer Styling */
@@ -687,8 +724,9 @@ input {
 /*tell 651 is for viwe profile*/
 .actions {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
+    justify-content: center;
+    margin-top: 30px;
+    
 }
 
 .edit-btn {
@@ -736,18 +774,29 @@ input {
     height: 250px;
     background-color: gray;
     border-radius: 100%;
-    margin: auto;
+    overflow: hidden;
+}
+.userImage img{
+    width: 250px;
+    background-size: contain;
 }
 
 .user-info {
+    display: flex ;
+    margin-top:10%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+
+}
+.userData{
+    width: 50%;
+
+}
+.userData p{
+    background: linear-gradient(to left,  #4c669f25, #0a1a4d25);
     width: 100%;
-    padding: 2rem;
-    border-radius: 10px;
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); */
-    overflow-wrap: break-word;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
 
 }
 
@@ -820,7 +869,7 @@ input {
     float: left;
     height: 100%;
     width: 20%;
-    background: linear-gradient(to bottom right, #4c669f, #0a1a4d);
+    background: linear-gradient(to bottom right, #0a1a4d, #4c669f);
     padding-top: 40px;
     color: #ffffff;
     position: fixed;
@@ -1005,8 +1054,26 @@ table {
     position: relative;
     border: 1px solid #dddddd;
     font-size: 0.9rem;
+    margin-top: 20px;
 }
-
+.annTable  th{
+    background-color: #4c669f;
+    color: white;
+    text-align: center;
+}
+.usersTable {
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+    border: 1px solid #dddddd;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+.usersTable  th{
+    background-color: #4c669f;
+    color: white;
+    text-align: center;
+}
 .announcPage {
     min-width: 75%;
 }
@@ -1084,10 +1151,8 @@ h4 {
     position: relative;
     width: 95%;
     height: fit-content;
-    padding: 20px;
     border-radius: 5px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    
     display: flex;
     overflow-wrap: anywhere;
 }
@@ -1108,11 +1173,24 @@ h4 {
 }
 
 .information {
-    background-color: rgba(76, 102, 159, 0.199);
+    /* background-color: rgba(76, 102, 159, 0.199); */
+    background: linear-gradient(to left,  #4c669f25, #0a1a4d50);
     border-left: 4px #4c669f solid;
     display: flex;
     flex-direction: column;
     color: #4c669f;
+    margin: 15px;
+    margin-left: 0;
+    
+}
+
+
+.information h4{
+    
+}
+.information *{
+    
+    margin: 20px;
 }
 
 .done {
@@ -1261,7 +1339,7 @@ i {
 .insight-card p {
     font-size: 1.5em;
     font-weight: bold;
-    color: #007bff;
+    color: rgb(90 106 167);
 }
 
 
@@ -1296,7 +1374,7 @@ i {
 }
 
 .action-btn {
-    background: #007bff;
+    background:  rgb(88, 109, 175);
     color: white;
     padding: 15px 20px;
     border-radius: 5px;
@@ -1306,8 +1384,28 @@ i {
 }
 
 .action-btn:hover {
-    background: #0056b3;
+    background: #4c669f;
 }
+.tbl-action-btn{
+    background:  rgb(88, 109, 175);
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+}
+
+.tbl-action-btn:hover {
+    background: #4c669f;
+}
+.input-field{
+    padding: 0px !important;
+    /* padding-left: 10px !important; */
+}
+
 
 /* Calendar Container */
 .calendar-container {

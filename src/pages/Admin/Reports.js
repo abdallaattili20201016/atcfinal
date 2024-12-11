@@ -83,18 +83,24 @@ const Reports = () => {
               <th>Category</th>
               <th>Metric</th>
               <th>Details</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {data.map((section, sectionIndex) => (
               <>
                 <tr key={`category-${sectionIndex}`}>
-                  <td rowSpan={section.details.length + 1}>
+                  <td rowSpan={section.details.length+1}>
+                    {/* +1 */}
                     <strong>{section.category}</strong>
                   </td>
-                  <td colSpan="2"></td>
-                  <td>
+                  {/* <td colSpan="2" class="hiddenRow"></td> */}
+                  
+                </tr>
+                {section.details.map((detail, detailIndex) => (
+                  <tr key={`${sectionIndex}-${detailIndex}`} id={`category-${sectionIndex}-rows`}>
+                    <td >{detail.metric}</td>
+                    <td>{detail.value}</td>
+                    <td >
                     <button
                       onClick={() => handlePrintCategory(`category-${sectionIndex}-rows`, section.category)}
                       className="print-button"
@@ -102,12 +108,7 @@ const Reports = () => {
                       Print
                     </button>
                   </td>
-                </tr>
-                {section.details.map((detail, detailIndex) => (
-                  <tr key={`${sectionIndex}-${detailIndex}`} id={`category-${sectionIndex}-rows`}>
-                    <td>{detail.metric}</td>
-                    <td>{detail.value}</td>
-                    <td></td>
+                  
                   </tr>
                 ))}
               </>

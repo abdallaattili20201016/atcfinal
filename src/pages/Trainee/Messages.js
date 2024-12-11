@@ -81,8 +81,6 @@ const MessagesPage = () => {
       <Navbar />
       <div className="ViewPage">
           <center><h1 class="pageTitle">Messages</h1></center>
-
-
         {/* Messages List */}
         <div className="messages-list">
           {messages.map((message) => (

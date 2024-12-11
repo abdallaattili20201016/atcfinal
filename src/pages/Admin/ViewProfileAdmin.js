@@ -65,11 +65,10 @@ const ViewProfileAdmin = () => {
         <>
             <AdminNavbar />
             <div className="ViewPage">
-                <div className="profile-content">
+                <center><h3 class="pageTitle">Personal Info</h3></center>
                     <div className="user-info">
-                        <h3>Personal Info</h3>
-                        <div className="userImage"></div>
-                        
+                        <span className="userImage"></span>
+                        <div class="userData">
                         <p>
                             <strong>Name:</strong> {editMode ? (
                                 <input
@@ -135,7 +134,9 @@ const ViewProfileAdmin = () => {
                             )}
                         </p>
 
-                        <div className="actions">
+                        </div>
+                    </div>
+                    <div className="actions">
                             {editMode ? (
                                 <>
                                     <button onClick={handleSave} className="edit-btn">Save</button>
@@ -145,8 +146,7 @@ const ViewProfileAdmin = () => {
                                 <button onClick={handleEditToggle} className="edit-btn">Edit</button>
                             )}
                         </div>
-                    </div>
-                </div>
+                
             </div>
         </>
     );

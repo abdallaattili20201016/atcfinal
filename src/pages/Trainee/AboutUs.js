@@ -33,7 +33,7 @@ const AboutUs = () => {
         </section>
 
         {/* Achievements Section */}
-        <section className="about-us-achievements information">
+        <section className=" information about-us-achievements" >
           <h2>Our Achievements</h2>
           <div className="info-section">
             <div className="achievement">

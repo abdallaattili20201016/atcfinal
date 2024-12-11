@@ -1,23 +1,58 @@
 // src/pages/Admin/UsersPage.js
-import React, { useState } from 'react';
-import AdminNavbar from '../../components/AdminNavbar';
-import '../../styles/Styles.css';
+import React, { useState } from "react";
+import AdminNavbar from "../../components/AdminNavbar";
+import "../../styles/Styles.css";
 
 const UsersPage = () => {
   const [users, setUsers] = useState([
-    { id: 1, name: "John Doe", role: "Trainer", email: "john@example.com", phone: "123-456-7890", date: "2024-11-15" },
-    { id: 2, name: "Jane Smith", role: "Trainee", email: "jane@example.com", phone: "987-654-3210", date: "2024-11-14" },
-    { id: 3, name: "Alice Johnson", role: "Trainer", email: "alice@example.com", phone: "567-890-1234", date: "2024-11-13" },
-    { id: 4, name: "Bob Brown", role: "Trainee", email: "bob@example.com", phone: "234-567-8901", date: "2024-11-12" },
+    {
+      id: 1,
+      name: "John Doe",
+      role: "Trainer",
+      email: "john@example.com",
+      phone: "123-456-7890",
+      date: "2024-11-15",
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      role: "Trainee",
+      email: "jane@example.com",
+      phone: "987-654-3210",
+      date: "2024-11-14",
+    },
+    {
+      id: 3,
+      name: "Alice Johnson",
+      role: "Trainer",
+      email: "alice@example.com",
+      phone: "567-890-1234",
+      date: "2024-11-13",
+    },
+    {
+      id: 4,
+      name: "Bob Brown",
+      role: "Trainee",
+      email: "bob@example.com",
+      phone: "234-567-8901",
+      date: "2024-11-12",
+    },
   ]);
 
   const [roleFilter, setRoleFilter] = useState("All");
   const [isOverlayVisible, setIsOverlayVisible] = useState(false); // State to show/hide overlay
-  const [newUser, setNewUser] = useState({ name: "", role: "Trainer", email: "", phone: "" });
+  const [newUser, setNewUser] = useState({
+    name: "",
+    role: "Trainer",
+    email: "",
+    phone: "",
+  });
 
   // Filter users based on role
   const filteredUsers =
-    roleFilter === "All" ? users : users.filter((user) => user.role === roleFilter);
+    roleFilter === "All"
+      ? users
+      : users.filter((user) => user.role === roleFilter);
 
   // Handle input change for the new user
   const handleInputChange = (e) => {
@@ -28,7 +63,14 @@ const UsersPage = () => {
   // Handle adding a new user
   const handleAddUser = () => {
     if (newUser.name && newUser.role && newUser.email && newUser.phone) {
-      setUsers([...users, { ...newUser, id: Date.now(), date: new Date().toISOString().split("T")[0] }]);
+      setUsers([
+        ...users,
+        {
+          ...newUser,
+          id: Date.now(),
+          date: new Date().toISOString().split("T")[0],
+        },
+      ]);
       setIsOverlayVisible(false); // Hide the overlay after adding
       setNewUser({ name: "", role: "Trainer", email: "", phone: "" });
     } else {
@@ -40,8 +82,10 @@ const UsersPage = () => {
     <>
       <AdminNavbar />
       <div className="ViewPage">
-        <h1>Users</h1>
-        <table className="table">
+        <center>
+          <h1 class="pageTitle">Users</h1>
+        </center>
+        <table className="usersTable">
           <thead>
             <tr>
               <th>Name</th>
@@ -61,8 +105,8 @@ const UsersPage = () => {
                 <td>{user.phone}</td>
                 <td>{user.date}</td>
                 <td>
-                  <button className="edit-button">Edit</button>
-                  <button className="delete-button">Delete</button>
+                  <button className="tbl-action-btn">Edit</button>
+                  <button className="tbl-action-btn">Delete</button>
                 </td>
               </tr>
             ))}
@@ -73,7 +117,10 @@ const UsersPage = () => {
         {isOverlayVisible && (
           <div className="overlay">
             <div className="overlay-content">
-              <button className="close-button" onClick={() => setIsOverlayVisible(false)}>
+              <button
+                className="close-button"
+                onClick={() => setIsOverlayVisible(false)}
+              >
                 ✖
               </button>
               <h2>Add New User</h2>
@@ -125,25 +172,37 @@ const UsersPage = () => {
                 <button className="primary-button" onClick={handleAddUser}>
                   Save
                 </button>
-                <button className="secondary-button" onClick={() => setIsOverlayVisible(false)}>
+                <button
+                  className="secondary-button"
+                  onClick={() => setIsOverlayVisible(false)}
+                >
                   Cancel
                 </button>
               </div>
             </div>
           </div>
         )}
-        <div className="info-section">
+        <div className="viewUsers">
           <div className="info-box">
             <button className="edit-btn" onClick={() => setRoleFilter("All")}>
               View All Users
             </button>
-            <button className="edit-btn" onClick={() => setRoleFilter("Trainer")}>
+            <button
+              className="edit-btn"
+              onClick={() => setRoleFilter("Trainer")}
+            >
               View All Trainers
             </button>
-            <button className="edit-btn" onClick={() => setRoleFilter("Trainee")}>
+            <button
+              className="edit-btn"
+              onClick={() => setRoleFilter("Trainee")}
+            >
               View All Trainees
             </button>
-            <button className="edit-btn" onClick={() => setIsOverlayVisible(true)}>
+            <button
+              className="edit-btn"
+              onClick={() => setIsOverlayVisible(true)}
+            >
               Add User
             </button>
           </div>

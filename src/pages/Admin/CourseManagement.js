@@ -77,7 +77,7 @@ const CourseManagement = () => {
     <>
       <AdminNavbar />
       <div className="ViewPage">
-        <h1>Course Management</h1>
+        <center><h1 class="pageTitle">Course Management</h1></center>
         <div className="actions">
           <input
             type="text"
@@ -115,8 +115,8 @@ const CourseManagement = () => {
                   <td>{course.status}</td>
                   <td>{course.students}</td>
                   <td>
-                    <button onClick={() => handleEditRequest(course)}>Edit</button>
-                    <button onClick={() => handleDeleteRequest(course.id)}>
+                    <button onClick={() => handleEditRequest(course)} class="tbl-action-btn">Edit</button>
+                    <button onClick={() => handleDeleteRequest(course.id)} class="tbl-action-btn">
                       Delete
                     </button>
                   </td>

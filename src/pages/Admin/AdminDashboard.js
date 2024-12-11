@@ -56,9 +56,43 @@ const AdminDashboard = () => {
         <section className="welcome-section">
           <h2>Welcome, {adminName}!</h2>
         </section>
+        <div class="dashboardPage">
 
-        {/* Quick Insights Section */}
-        <section className="quick-insights">
+   
+
+        {/* Announcements and Calendar */}
+        <section className="info-section">
+          {/* Recent Activity Section */}
+        <div className="posts-container">
+          <h2>Recent Activity</h2>
+          <div >
+            {recentActivity.map((activity, index) => (
+              <span class="information">
+                <li key={index} class="nonLi">
+                  {activity}
+                </li>
+              </span>
+            ))}
+          </div>
+        </div>
+          {/* Announcements Div */}
+          <div className="posts-container">
+            <h2>Announcements</h2>
+            <DashboardAnnouncements announcements={announcements} />
+          </div>
+
+          {/* Calendar Section */}
+          <div className="calendar-container">
+            {/* <h2>Calendar</h2> */}
+            <div className="react-calendar">
+              <Calendar />
+            </div>
+          </div>
+        </section>
+        <div className="dashboard-container">
+
+             {/* Quick Insights Section */}
+             <section className="quick-insights">
           <div className="insight-card">
             <h2>Total Trainers</h2>
             <p>20</p>
@@ -77,46 +111,19 @@ const AdminDashboard = () => {
           </div>
         </section>
 
-        {/* Announcements and Calendar */}
-        <section className="info-section">
-          {/* Announcements Div */}
-          <div className="posts-container">
-            <h2>Announcements</h2>
-            <DashboardAnnouncements announcements={announcements} />
-          </div>
+        
 
-          {/* Calendar Section */}
-          <div className="calendar-container">
-            {/* <h2>Calendar</h2> */}
-            <div className="react-calendar">
-              <Calendar />
-            </div>
-          </div>
-        </section>
-
-        {/* Recent Activity Section */}
-        <div className="posts-container">
-          <h2>Recent Activity</h2>
-          <div >
-            {recentActivity.map((activity, index) => (
-              <span class="information">
-                <li key={index}>
-                  <p>{activity}</p>
-                </li>
-              </span>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Upcoming Events Section */}
-        <section className="announcements-container">
-          <ul className="info-box">
-            <h2>Upcoming Events</h2>
+        {/* <section className="announcements-container">
+        <h2>Upcoming Events</h2>
+          <ul>
             {upcomingEvents.map((event, index) => (
-              <li key={index}>{event}</li>
+              <li key={index} class="information">{event}</li>
             ))}
           </ul>
-        </section>
+        </section> */}
 
         {/* Quick Actions Section */}
         <section className="quick-actions-section">
@@ -127,6 +134,8 @@ const AdminDashboard = () => {
             <Link to="/Admin/Users" className="action-btn">Manage Users</Link>
           </div>
         </section>
+        </div>
+      </div>
       </div>
     </>
   );

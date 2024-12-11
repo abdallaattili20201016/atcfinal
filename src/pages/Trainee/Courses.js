@@ -114,7 +114,7 @@ const Courses = () => {
                 <h3>{course.title}</h3>
                 <p>{course.description}</p>
                 <button
-                  className="course-button blue"
+                  className="course-button sysDarkBlue"
                   onClick={() => openModal(course)}
                 >
                   View Details

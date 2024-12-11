@@ -1,37 +1,37 @@
-import React, { useState } from 'react';
-import AdminNavbar from '../../components/AdminNavbar';
-import WarningOverlay from '../../components/WarningOverlay';
-import '../../styles/Styles.css';
+import React, { useState } from "react";
+import AdminNavbar from "../../components/AdminNavbar";
+import WarningOverlay from "../../components/WarningOverlay";
+import "../../styles/Styles.css";
 
 const AnnouncementsPage = () => {
   const [announcements, setAnnouncements] = useState([
     {
       id: 1,
-      title: 'System Maintenance Scheduled',
-      description: 'The system will be down on Nov 20 for 2 hours.',
-      date: '2024-11-20',
+      title: "System Maintenance Scheduled",
+      description: "The system will be down on Nov 20 for 2 hours.",
+      date: "2024-11-20",
     },
     {
       id: 2,
-      title: 'New Course Available',
-      description: 'Enroll now for the Data Science course starting Nov 25.',
-      date: '2024-11-18',
+      title: "New Course Available",
+      description: "Enroll now for the Data Science course starting Nov 25.",
+      date: "2024-11-18",
     },
     {
       id: 3,
-      title: 'Important Deadline',
-      description: 'Register before Nov 16 to secure your seat.',
-      date: '2024-11-16',
+      title: "Important Deadline",
+      description: "Register before Nov 16 to secure your seat.",
+      date: "2024-11-16",
     },
   ]);
 
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState("");
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [editingAnnouncement, setEditingAnnouncement] = useState(null);
   const [newAnnouncement, setNewAnnouncement] = useState({
-    title: '',
-    description: '',
-    date: '',
+    title: "",
+    description: "",
+    date: "",
   });
 
   const [warningOverlayVisible, setWarningOverlayVisible] = useState(false);
@@ -40,8 +40,8 @@ const AnnouncementsPage = () => {
   // Handle input changes with validation for letters and spaces only
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'title' ) {
-      if (/^[a-zA-Z\s]*$/.test(value) || value === '') {
+    if (name === "title") {
+      if (/^[a-zA-Z\s]*$/.test(value) || value === "") {
         setNewAnnouncement({ ...newAnnouncement, [name]: value });
       }
     } else {
@@ -52,7 +52,7 @@ const AnnouncementsPage = () => {
   // Open Add Announcement overlay
   const handleAdd = () => {
     setEditingAnnouncement(null);
-    setNewAnnouncement({ title: '', description: '', date: '' });
+    setNewAnnouncement({ title: "", description: "", date: "" });
     setIsOverlayVisible(true);
   };
 
@@ -69,12 +69,17 @@ const AnnouncementsPage = () => {
       // Update existing announcement
       setAnnouncements(
         announcements.map((a) =>
-          a.id === editingAnnouncement.id ? { ...editingAnnouncement, ...newAnnouncement } : a
+          a.id === editingAnnouncement.id
+            ? { ...editingAnnouncement, ...newAnnouncement }
+            : a
         )
       );
     } else {
       // Add new announcement
-      setAnnouncements([...announcements, { id: Date.now(), ...newAnnouncement }]);
+      setAnnouncements([
+        ...announcements,
+        { id: Date.now(), ...newAnnouncement },
+      ]);
     }
     setIsOverlayVisible(false);
   };
@@ -87,7 +92,9 @@ const AnnouncementsPage = () => {
 
   // Confirm delete
   const handleDeleteConfirm = () => {
-    setAnnouncements(announcements.filter((a) => a.id !== announcementToDelete));
+    setAnnouncements(
+      announcements.filter((a) => a.id !== announcementToDelete)
+    );
     setWarningOverlayVisible(false);
     setAnnouncementToDelete(null);
   };
@@ -102,9 +109,8 @@ const AnnouncementsPage = () => {
     <>
       <AdminNavbar />
       <div className="ViewPage announcPage">
-        <h1>Announcements</h1>
-        <div className="info-section">
-          <div className="info-box">
+        <center><h1 class="pageTitle">Announcements</h1></center>
+          <div className="actions">
             <input
               type="text"
               placeholder="Search announcements..."
@@ -116,7 +122,7 @@ const AnnouncementsPage = () => {
               Add Announcement
             </button>
           </div>
-        </div>
+        
         <div>
           <table className="annTable">
             <thead>
@@ -130,7 +136,9 @@ const AnnouncementsPage = () => {
             <tbody>
               {announcements
                 .filter((announcement) =>
-                  announcement.title.toLowerCase().includes(filter.toLowerCase())
+                  announcement.title
+                    .toLowerCase()
+                    .includes(filter.toLowerCase())
                 )
                 .map((announcement) => (
                   <tr key={announcement.id}>
@@ -138,11 +146,14 @@ const AnnouncementsPage = () => {
                     <td>{announcement.description}</td>
                     <td>{announcement.date}</td>
                     <td>
-                      <button className="edit-button" onClick={() => handleEdit(announcement)}>
+                      <button
+                        className="tbl-action-btn"
+                        onClick={() => handleEdit(announcement)}
+                      >
                         Edit
                       </button>
                       <button
-                        className="delete-button"
+                        className="tbl-action-btn"
                         onClick={() => handleDeleteRequest(announcement.id)}
                       >
                         Delete
@@ -158,10 +169,15 @@ const AnnouncementsPage = () => {
         {isOverlayVisible && (
           <div className="overlay">
             <div className="overlay-content">
-              <button className="close-button" onClick={() => setIsOverlayVisible(false)}>
+              <button
+                className="close-button"
+                onClick={() => setIsOverlayVisible(false)}
+              >
                 ✖
               </button>
-              <h2>{editingAnnouncement ? 'Edit Announcement' : 'Add Announcement'}</h2>
+              <h2>
+                {editingAnnouncement ? "Edit Announcement" : "Add Announcement"}
+              </h2>
               <form>
                 <label>
                   Title:
@@ -197,7 +213,10 @@ const AnnouncementsPage = () => {
                 <button className="primary-button" onClick={handleSave}>
                   Save
                 </button>
-                <button className="secondary-button" onClick={() => setIsOverlayVisible(false)}>
+                <button
+                  className="secondary-button"
+                  onClick={() => setIsOverlayVisible(false)}
+                >
                   Cancel
                 </button>
               </div>
