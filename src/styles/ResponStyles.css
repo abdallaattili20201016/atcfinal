@@ -1,0 +1,64 @@
+@media screen and (max-width: 480px) {
+    .allContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+.fancyBG {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.header-text {
+    font-size: 1.5rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+.contentDiv {
+    position: relative;
+    /* top: 0;
+    left: 0;
+    bottom: 0; */
+    padding-top: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+}
+@media screen and (max-width: 994) {
+    .sideNav {
+        display: block;
+        float: left;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom right,red, #4c669f) ;
+        padding-top: 40px;
+        color: #ffffff;
+        position: fixed;
+        z-index: 3;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        font-size: 1rem;
+    }
+    .ViewPage {
+        position: absolute;
+        left: 21%;
+        top: 5%;
+        bottom: 5%;
+        right: 2%;
+        width: -webkit-fill-available;
+        background-color: red;
+        /* width: 78%; */
+    }
+
+}

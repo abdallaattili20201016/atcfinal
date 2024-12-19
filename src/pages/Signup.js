@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import "../styles/Styles.css"; // Adjust path to point to styles folder
+import "../styles/ResponStyles.css";
+
 import { toast } from "react-toastify";
 import { API_URL } from "../constants/config";
 import { ApiRoutes } from "../constants/ApiRoutes";
@@ -90,9 +92,13 @@ const Signup = () => {
         <div class="fancyBG">
           {/* <img src="/logoo.jpg" alt="Logo" class="logo-image" /> */}
           <span class="header-text">
-            Academic<br></br>
-            <br></br>Training<br></br>
-            <br></br> Center
+          <span></span>
+            <span>Academic</span>
+            <span>Training</span>
+            <span>Center</span>
+            <span></span>
+            <span></span>
+
           </span>
         </div>
         <div class="contentDiv">

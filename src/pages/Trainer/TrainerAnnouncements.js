@@ -92,9 +92,8 @@ const AnnouncementsPage = () => {
     <>
       <TrainerNavbar />
       <div className="ViewPage announcPage" >
-        <h1>Announcements</h1>
-        <div className="info-section">
-          <div className="info-box">
+      <center><h1 class="pageTitle">Announcements</h1></center>
+          <div className="actions">
             <input
               type="text"
               placeholder="Search announcements..."
@@ -106,7 +105,7 @@ const AnnouncementsPage = () => {
               Add Announcement
             </button>
           </div>
-        </div>
+        
         <div>
           <table className="annTable">
             <thead>
@@ -128,11 +127,11 @@ const AnnouncementsPage = () => {
                     <td>{announcement.description}</td>
                     <td>{announcement.date}</td>
                     <td>
-                      <button className="edit-button" onClick={() => handleEdit(announcement)}>
+                      <button className="tbl-action-btn" onClick={() => handleEdit(announcement)}>
                         Edit
                       </button>
                       <button
-                        className="delete-button"
+                        className="tbl-action-btn"
                         onClick={() => handleDeleteRequest(announcement.id)}
                       >
                         Delete

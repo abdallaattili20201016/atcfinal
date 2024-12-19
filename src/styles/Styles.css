@@ -1,3 +1,4 @@
+
 .fancyBG {
     position: fixed;
     top: 0;
@@ -5,9 +6,11 @@
     bottom: 0;
     width: 35%;
     height: 100%;
+    padding: 0px;
     display: flex;
     justify-content: center;
     background: linear-gradient(to bottom right, #4c669f, #0a1a4d);
+    z-index: 1;
 }
 .pageTitle{
     color: #0a1a4d;
@@ -42,11 +45,11 @@
 
 .header-text {
     color: white;
-    font-size: 50px;
+    font-size: 3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     font-weight: bolder;
     text-align: center;
 }
@@ -120,7 +123,7 @@
     justify-content: center;
     font-family: 'Franklin Gothic Medium';
 
-    /* padding: 20px; */
+    padding: 0px;
 }
 
 /* .contentDivsignup {
@@ -1663,4 +1666,8 @@ i {
   .course-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .editInput{
+    padding: 10px 2px !important;
+
   }

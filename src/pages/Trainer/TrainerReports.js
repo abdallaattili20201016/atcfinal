@@ -44,20 +44,22 @@ const TrainerReportsPage = () => {
     <>
       <TrainerNavbar />
       <div className="ViewPage">
-        <h1>Trainer Reports</h1>
+      <center><h1 class="pageTitle">Trainer Reports</h1></center>
+
 
         {/* Filters Section */}
         <div className="filters-section">
           <select
             className="input-field"
+            class="editInput"
             value={reportType}
             onChange={handleReportTypeChange}
           >
             <option value="">Select Report Type</option>
             <option value="Trainee Details">Trainee Details</option>
             <option value="Course Details">Course Details</option>
-          </select>
-
+          </select><br></br><br></br>
+          <label>Start Date</label>
           <input
             type="date"
             className="date"
@@ -65,6 +67,7 @@ const TrainerReportsPage = () => {
             value={filters.startDate}
             onChange={(e) => setFilters({ ...filters, startDate: e.target.value })}
           />
+          <label>End Date</label>
           <input
             type="date"
             className="date"
@@ -72,6 +75,7 @@ const TrainerReportsPage = () => {
             value={filters.endDate}
             onChange={(e) => setFilters({ ...filters, endDate: e.target.value })}
           />
+          <label>Course Name</label>
           <input
             type="text"
             className="form-field"
@@ -91,7 +95,7 @@ const TrainerReportsPage = () => {
             <button className="edit-btn" onClick={handlePrint}>
               Print Report
             </button>
-            <table className="table">
+            <table className="annTable">
               <thead>
                 <tr>
                   {reportType === 'Trainee Details' ? (

@@ -1,6 +1,8 @@
 // src/ForgotPassword.js
 import React, { useState } from 'react';
 import '../styles/Styles.css'; // Import the CSS for styling
+import "../styles/ResponStyles.css";
+
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -21,12 +23,13 @@ const ForgotPassword = () => {
         <div className="fancyBG">
           {/* <img src="/logoo.jpg" alt="Logo" className="logo-image" /> */}
           <span className="header-text">
-            Academic
-            <br />
-            <br />
-            Training
-            <br />
-            <br /> Center
+          <span></span>
+            <span>Academic</span>
+            <span>Training</span>
+            <span>Center</span>
+            <span></span>
+            <span></span>
+
           </span>
         </div>
         <div className="contentDiv">

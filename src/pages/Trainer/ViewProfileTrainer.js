@@ -77,9 +77,12 @@ const ViewProfile = () => {
     <>
       <TrainerNavbar />
       <div className="ViewPage">
-        <div className="profile-content">
-          <h3>Personal Info</h3>
+        <center>
+          <h3 class="pageTitle">Personal Info</h3>
+        </center>
+        <div className="user-info">
           <div className="userImage"></div>
+          <div class="userData">
           <p>
             <strong>Name:</strong> <span>{profile.name}</span>
           </p>
@@ -92,12 +95,14 @@ const ViewProfile = () => {
           <p>
             <strong>Address:</strong> <span>{profile.address}</span>
           </p>
+          </div>
+          </div>
           <div className="actions">
             <button onClick={handleEdit} className="edit-btn">
               Edit Profile
             </button>
           </div>
-        </div>
+        
       </div>
 
       {/* Overlay for Editing Profile */}
@@ -111,20 +116,23 @@ const ViewProfile = () => {
             <form>
               <label>
                 Name:
+                </label>
                 <input
                   type="text"
                   name="name"
+                  class="editInput"
                   value={editedProfile.name}
                   onChange={handleInputChange}
                   required
                 />
                 {errors.name && <p className="error-text">{errors.name}</p>}
-              </label>
+              
               <label>
                 Email:
                 <input
                   type="email"
                   name="email"
+                  class="editInput"
                   value={editedProfile.email}
                   onChange={handleInputChange}
                   required
@@ -136,6 +144,7 @@ const ViewProfile = () => {
                 <input
                   type="text"
                   name="phone"
+                  class="editInput"
                   value={editedProfile.phone}
                   onChange={handleInputChange}
                   required
@@ -146,6 +155,7 @@ const ViewProfile = () => {
                 Address:
                 <select
                   name="address"
+                  class="editInput"
                   value={editedProfile.address}
                   onChange={handleInputChange}
                 >

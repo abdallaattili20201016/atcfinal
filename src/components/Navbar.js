@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Styles.css"; // Adjust the path as needed
+import "../styles/ResponStyles.css";
+
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);

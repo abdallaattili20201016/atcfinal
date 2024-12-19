@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Styles.css";
+import "../styles/ResponStyles.css";
 import { ApiRoutes } from "../constants/ApiRoutes";
 import { toast } from "react-toastify";
 import useFetch from "../helpers/useFetch";
@@ -89,12 +90,13 @@ const Login = () => {
         <div className="fancyBG">
           {/* <img src="/logoo.jpg" alt="Logo" className="logo-image" /> */}
           <span className="header-text">
-            Academic
-            <br />
-            <br />
-            Training
-            <br />
-            <br /> Center
+            <span></span>
+            <span>Academic</span>
+            <span>Training</span>
+            <span>Center</span>
+            <span></span>
+            <span></span>
+
           </span>
         </div>
         <div className="contentDiv">

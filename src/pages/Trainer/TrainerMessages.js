@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../../styles/Styles.css';
 import '../../styles/Messages.css';
 import TrainerNavbar from '../../components/TrainerNavbar';
+import personImage from '../../assets/images/person.jpeg';
+
 
 const MessagesPage = () => {
   const [messages, setMessages] = useState([
@@ -49,10 +51,7 @@ const MessagesPage = () => {
     <>
       <TrainerNavbar />
       <div className="ViewPage">
-        <div className="messages-header">
-          <h1>Messages</h1>
-        </div>
-
+          <center><h1 class="pageTitle">Messages</h1></center>
         {/* Messages List */}
         <div className="messages-list">
           {messages.map((message) => (
@@ -61,6 +60,9 @@ const MessagesPage = () => {
               className="message-item"
               onClick={() => setSelectedChat(message)}
             >
+               <span className="contactImg">
+            <img src={personImage} alt="Person" />
+            </span>
               <h3>{message.contact}</h3>
             </div>
           ))}

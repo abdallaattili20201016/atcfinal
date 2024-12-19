@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Styles.css";
+import "../../styles/ResponStyles.css";
 import Navbar from "../../components/Navbar";
 import personImage from "C:/Users/USER/Documents/GitHub/atcfinal/src/assets/images/person.jpeg";
 

@@ -20,7 +20,7 @@ const Navbar = () => {
     <div
       className={`sideNav  ${drawerOpen ? "open" : ""}`}
       style={{
-        background: "linear-gradient(to bottom right, #56c596, #004d40)",
+        background: "linear-gradient(to bottom right, #56c596, #4c669f)",
       }}
     >
       <div className="logo">
@@ -34,41 +34,30 @@ const Navbar = () => {
         <ul class="mainUnorderdList">
           <li class="navItem">
             <a href="/Trainer/ViewProfileTrainer">
-              <span role="img" aria-label="profile">
-                👤
-              </span>
               Profile Settings
             </a>
           </li>
           <li class="navItem">
             <a href="/Trainer/TrainerAnnouncements">
-              <span role="img" aria-label="announcements">
-                📢
-              </span>
+      
               Announcements
             </a>
           </li>
           <li class="navItem">
             <a href="/Trainer/TrainerCourses">
-              <span role="img" aria-label="courses">
-                📚
-              </span>
+              
               Course
             </a>
           </li>
           <li class="navItem">
             <a href="/Trainer/TrainerReports">
-              <span role="img" aria-label="reports">
-                📊
-              </span>
+              
               Reports
             </a>
           </li>
           <li class="navItem">
             <a href="/Trainer/TrainerMessages">
-              <span role="img" aria-label="Messages">
-                👥
-              </span>
+              
               Messages
             </a>
           </li>
@@ -80,9 +69,7 @@ const Navbar = () => {
                 localStorage.removeItem("user");
               }}
             >
-              <span role="img" aria-label="logout">
-                🔓
-              </span>
+              
               logout
             </a>
           </li>

@@ -13,8 +13,9 @@ const CoursesPage = () => {
     <>
       <TrainerNavbar />
       <div className="ViewPage">
-        <h1>Courses</h1>
-        <table className="table">
+      <center><h1 class="pageTitle">Courses</h1></center>
+
+        <table className="annTable">
           <thead>
             <tr>
               <th>Course Name</th>
